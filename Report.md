@@ -3,10 +3,36 @@
 The work desribed in this report was completed as part of the submission for the Deep Reinforcement Learning nanodegree by Udacity.
 
 
-#Introduction
+## Introduction
 
 
-#Implementation Details
+## Implementation Details
+
+# Network Architecture
+
+The network architecture is unchanged from the provided code and is desribed below.
+
+The actor network maps states to actions with the following simple architecture.
+
+* A fully connected layer with 256 dimension followed by Relu activation
+
+* An output layer to the action dimension follwed by tanh activation.
+
+
+The critic network maps the state-action space to a single value using the following architecture;
+
+* The 33 dimensional state is fed through a fully connected layer of 256 dimensions followed by Leaky Relu activation.
+
+* The 256 dimesional output is combined with the 4 dimensional action and fed into a fully connected layer of 256 dimeniosn followed by Leaky Reul activation.
+
+* A 128 dimensional fully connected layer followed by Leaky Relue
+
+* A 1 dimensional output layer.
+
+
+
+
+
 
 HyperParameter | Description | Value
 ------------ | ------------- | -------------  
