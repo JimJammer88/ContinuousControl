@@ -8,7 +8,27 @@ The work desribed in this report was completed as part of the submission for the
 
 ## Implementation Details
 
+```python
 
+for i in range (self.num_agents):
+  state,action,reward,next_state,done = multi_states[i,:], multi_actions[i,:],multi_rewards[i],multi_next_states[i,:],           multi_done[i]
+  self.memory.add(state, action, reward, next_state, done)
+```
+
+
+```python
+if time_step%20== 0 and len(self.memory) > BATCH_SIZE:
+    for j in range(10):
+        experiences = self.memory.sample()
+        self.learn(experiences, GAMMA)
+```
+
+```python
+self.critic_optimizer.zero_grad()
+        critic_loss.backward()
+        torch.nn.utils.clip_grad_norm(self.critic_local.parameters(), 1)
+        self.critic_optimizer.step()
+```
 
 
 ### Network Architecture
