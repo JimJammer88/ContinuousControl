@@ -1,4 +1,4 @@
-### Report - Continuous Control with Deep Deterministic Policy Gradients
+# Report - Continuous Control with Deep Deterministic Policy Gradients
 
 The work desribed in this report was completed as part of the submission for the Deep Reinforcement Learning nanodegree by Udacity.
 
@@ -8,7 +8,10 @@ The work desribed in this report was completed as part of the submission for the
 
 ## Implementation Details
 
-# Network Architecture
+
+
+
+### Network Architecture
 
 The network architecture is unchanged from the provided code and is desribed below.
 
@@ -32,7 +35,7 @@ The critic network maps the state-action space to a single value using the follo
 
 
 
-
+### Hyperparameters
 
 HyperParameter | Description | Value
 ------------ | ------------- | -------------  
@@ -47,3 +50,9 @@ N_GRAD_UPDATE| Number of updates performed every N_TIMESTEPS | 10
 MU | Drift parameter of the OU process used to add noise to the actions | 0
 THETA | Speed paramaeter of the OU process used to add noise to the actions | 0.15
 SIGMA | Volatility parameter of the OU procc used to add noise to the actions | 0.2
+
+
+## Results
+
+![OnlineTraining](online_training.png)
+Format: ![online_training](url)
