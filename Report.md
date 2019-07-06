@@ -54,5 +54,13 @@ SIGMA | Volatility parameter of the OU procc used to add noise to the actions | 
 
 ## Results
 
+A single training run was made with the final agent.
+
+The environment is considered solved when the average score of the 33 agents over 100 episodes is maintained at or above 30.
+
+Our agent acheived this after episode 202.
+
+The score (averaged over all agents) for each episode and the average score over the previous 100 episodes is plotted below.
+
 ![OnlineTraining](online_training.png)
 Format: ![online_training](url)
