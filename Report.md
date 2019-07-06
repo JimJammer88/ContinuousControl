@@ -84,3 +84,8 @@ The score (averaged over all agents) for each episode and the average score over
 
 ![OnlineTraining](online_training.png)
 Format: ![online_training](url)
+
+
+The unity environment includes tools for visualtion. Below is a short clip of the trained agent(after 400 episodes) in the envrionment.
+
+![](Trained.gif)
