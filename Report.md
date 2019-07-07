@@ -132,4 +132,4 @@ It would also be interesting to implement the distributed version of the algorit
 
 [DRLGIT] - [DDPG implementation from Udacity](https://github.com/udacity/deep-reinforcement-learning/tree/master/ddpg-pendulum)
 
-[D4PG] - [DISTRIBUTED DISTRIBUTIONAL DETERMINISTIC POLICY GRADIENTS](https://arxiv.org/pdf/1804.08617.pdf)
+[D4PG] - [Distributed Distributional Deterministic Policy Gradients](https://arxiv.org/pdf/1804.08617.pdf)
