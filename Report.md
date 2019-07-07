@@ -5,7 +5,7 @@ The work desribed in this report was completed as part of the submission for the
 
 ## Introduction
 
-In this project we use a modification of the Deep Deterministic Policy Gradient algortihm (DDPG) from [CITE] to simulataneuous train 33 Reacher agents in a Unity environment. 
+In this project we use a modification of the Deep Deterministic Policy Gradient algortihm (DDPG) from [CITE] to simulataneuous train 33 Reacher agents in a Unity environment. We made use of the implementation of DDPG provided in the Deep Reinforcement Learning course repository, and, following the guidelines in the benchmark solution,  modifieid the code to work for multiple agents.
 
 
 (Something about actor critic methods)
@@ -20,8 +20,10 @@ The DDPG algorithm from (CITE) is show below.
 ![DDPG Algorithm](DDG_Algorithm.png)
 Format: ![DDPG Algorithm](url)
 
+In this project we made use of the implementation of DDPG provided in the Deep Reinforcement Learning course repository modifieid the code to work for multiple agents.
 
 
+In the modified implementation the replay buffer is shared between all 33 agents. In the step method (that is called every time step) we loop through each agent and add the most recently collected experience to the buffer.
 
 ```python
 
@@ -30,6 +32,7 @@ for i in range (self.num_agents):
   self.memory.add(state, action, reward, next_state, done)
 ```
 
+One of the issues we face when collecting experience from multiple agents is that the learning algortihm can become very unstable, particularly if we make an update for every agent at every time step. Following the recomenations in the benchmark solution we instead only make 10 updates to the networks every 20 timesteps.
 
 ```python
 if time_step%20== 0 and len(self.memory) > BATCH_SIZE:
@@ -38,12 +41,17 @@ if time_step%20== 0 and len(self.memory) > BATCH_SIZE:
         self.learn(experiences, GAMMA)
 ```
 
+Another recomended step we followed to reduce instability was to clip the gradient of the  crtic network.
+
 ```python
 self.critic_optimizer.zero_grad()
         critic_loss.backward()
         torch.nn.utils.clip_grad_norm(self.critic_local.parameters(), 1)
         self.critic_optimizer.step()
 ```
+
+Another difference from the provided code is that we removed the clipping of each action. This was originally a temporary measure because of uncertainty around the best values to clip to in a new environment. As learning was stable without clipping the actions it was decided that no action clipping was necessary.
+
 
 
 ### Network Architecture
@@ -71,6 +79,14 @@ The critic network maps the state-action space to a single value using the follo
 
 
 ### Hyperparameters
+
+The hyperparameters used are listed below. These were kept the same as the provided code except that we; 
+
+* Decreased the buffer size. This was originaly e^6 and was reduced as an attempt to speed up training.
+* Increased the batch size. This was done on the recomendation of user Max G in the course forum.
+* Set learning rate of the critic to be equal to that of the actor.
+* Did not use weight decay.
+
 
 HyperParameter | Description | Value
 ------------ | ------------- | -------------  
