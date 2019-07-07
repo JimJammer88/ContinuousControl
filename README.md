@@ -1,6 +1,13 @@
+# Continuous Control
+
+Continuous Control assignment for the Deep Reinforcement Learning nanodegree.
+
+This repository contains the code required to train an agent to solve the Multi Agent Reacher Environment provided by Udacity.
+
+The notebook is saved with outputs from the training I have undertaken. The model weights are also stored in the repository.
 
 
-## Instructions 
+##  Dependencies 
 
 1. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
 
@@ -16,8 +23,26 @@
 
 2. Place the file in the main folder of this repository, and unzip (or decompress) the file. 
 
-
-
 3. Run `Continuous_Control.ipynb` to  train the agents.
+
+## Files
+
+1. Continuous_control.ipynb Thy ipython notebook loads the environment and controls the training of the agent.
+
+2. multi_agent_benchmark.py This file defines the Agent class for multi-agent training and the Replay Buffer class.
+
+3. model.py The classes Actor and Critic extend PyTorch.NN.Module and defines actor and critic networks respectively.
+
+4. Report.md The project report
+
+5. actor_solved.pth Pickled file created using torch.save(). This stores the model weights of the actor at the point at which the episode is solved.
+
+6. critic_solved.pth Pickled file created using torch.save(). This stores the model weights of the critic at the point at which the episode is solved.
+
+7. actor_final.pth Pickled file created using torch.save(). This stores the model weights of the actor at the point at which training terminates(after 400 episodes).
+
+8. critic_final.pth Pickled file created using torch.save(). This stores the model weights of the critic at the point at which training terminates(after 400 episodes).
+
+9. Run_Trained_Agent.ipynb - Loads the trained actor network and runs the agent in the environment.
 
 
