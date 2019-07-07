@@ -5,17 +5,17 @@ The work desribed in this report was completed as part of the submission for the
 
 ## Introduction
 
-In this project we use a modification of the Deep Deterministic Policy Gradient algortihm (DDPG) from [CITE] to simulataneuous train 33 Reacher agents in a Unity environment. We made use of the implementation of DDPG provided in the Deep Reinforcement Learning course repository, and, following the guidelines in the benchmark solution,  modifieid the code to work for multiple agents.
+In this project we use a modification of the Deep Deterministic Policy Gradient algortihm (DDPG) from [DDPG] to simulataneuous train 33 Reacher agents in a Unity environment. We made use of the implementation of DDPG provided in the Deep Reinforcement Learning course repository [DRLGIT], and, following the guidelines in the benchmark solution,  modifieid the code to work for multiple agents.
 
 ## Implementation Details
 
 ### Modifications to use with multiple agents
-The DDPG algorithm from (CITE) is show below.
+The DDPG algorithm from [DDPG] is shown below.
 
 ![DDPG Algorithm](DDG_Algorithm.png)
 Format: ![DDPG Algorithm](url)
 
-In this project we made use of the implementation of DDPG provided in the Deep Reinforcement Learning course repository modifieid the code to work for multiple agents.
+In this project we made use of the implementation of DDPG provided in the Deep Reinforcement Learning course repository [DRLGIT] and modifieid the code to work for multiple agents.
 
 
 In the modified implementation the replay buffer is shared between all 33 agents. In the step method (that is called every time step) we loop through each agent and add the most recently collected experience to the buffer.
@@ -77,8 +77,8 @@ The critic network maps the state-action space to a single value using the follo
 
 The hyperparameters used are listed below. These were kept the same as the provided code except that we; 
 
-* Decreased the buffer size. This was originaly e^6 and was reduced as an attempt to speed up training.
-* Increased the batch size. This was done on the recomendation of user Max G in the course forum.
+* Decreased the buffer size. This was originally e^6 and was reduced as an attempt to speed up training.
+* Increased the batch size. This was done on the recommendation of user Max G in the course forum.
 * Set learning rate of the critic to be equal to that of the actor.
 * Did not use weight decay.
 
@@ -94,8 +94,8 @@ LR_CRITIC | Learning rate of the critic | 1e^-4
 N_TIMESTEP | Number of timesteps between learning from experiences | 20
 N_GRAD_UPDATE| Number of updates performed every N_TIMESTEPS | 10
 MU | Drift parameter of the OU process used to add noise to the actions | 0
-THETA | Speed paramaeter of the OU process used to add noise to the actions | 0.15
-SIGMA | Volatility parameter of the OU procc used to add noise to the actions | 0.2
+THETA | Speed parameter of the OU process used to add noise to the actions | 0.15
+SIGMA | Volatility parameter of the OU process used to add noise to the actions | 0.2
 
 
 ## Results
@@ -104,7 +104,7 @@ A single training run was made with the final agent.
 
 The environment is considered solved when the average score of the 33 agents over 100 episodes is maintained at or above 30.
 
-Our agent acheived this after episode 202.
+Our agent achieved this after episode 202.
 
 The score (averaged over all agents) for each episode and the average score over the previous 100 episodes is plotted below.
 
@@ -112,7 +112,7 @@ The score (averaged over all agents) for each episode and the average score over
 Format: ![online_training](url)
 
 
-The unity environment includes tools for visualtion. Below is a short clip of the trained agent(after 400 episodes) in the envrionment. The full epidode has been posted on [YouTube](https://www.youtube.com/watch?v=OseH3sEPzuI)
+The unity environment includes tools for visualisation. Below is a short clip of the trained agent(after 400 episodes) in the environment. The full episode has been posted on [YouTube](https://www.youtube.com/watch?v=OseH3sEPzuI)
 
 ![](Trained.gif)
 
@@ -124,11 +124,12 @@ The current implementation could be improved by considering the following
 * Reducing the weight applied to noise in the actions as training progressed.
 * Introducing clipping to the actions.
 
-It would also be interesting to implement the distributed version of the algortihm described in [CITE]
+It would also be interesting to implement the distributed version of the algorithm described in [D4PG]
 
 ## References
 
 [DDPG] - [Continuous control with deep reinforcement learning](https://arxiv.org/abs/1509.02971)
+
 [DRLGIT] - [DDPG implementation from Udacity](https://github.com/udacity/deep-reinforcement-learning/tree/master/ddpg-pendulum)
-[D4PG] - [DISTRIBUTED DISTRIBUTIONAL DETERMINISTIC
-POLICY GRADIENTS]((https://arxiv.org/pdf/1804.08617.pdf)
+
+[D4PG] - [DISTRIBUTED DISTRIBUTIONAL DETERMINISTIC POLICY GRADIENTS](https://arxiv.org/pdf/1804.08617.pdf)
