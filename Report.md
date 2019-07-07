@@ -5,8 +5,23 @@ The work desribed in this report was completed as part of the submission for the
 
 ## Introduction
 
+In this project we use a modification of the Deep Deterministic Policy Gradient algortihm (DDPG) from [CITE] to simulataneuous train 33 Reacher agents in a Unity environment. 
+
+
+(Something about actor critic methods)
+
+
 
 ## Implementation Details
+
+### Modifications to use with multiple agents
+The DDPG algorithm from (CITE) is show below.
+
+![DDPG Algorithm](DDG_Algorithm.png)
+Format: ![DDPG Algorithm](url)
+
+
+
 
 ```python
 
