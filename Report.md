@@ -5,7 +5,7 @@ The work desribed in this report was completed as part of the submission for the
 
 ## Introduction
 
-In this project we use a modification of the Deep Deterministic Policy Gradient algortihm (DDPG) from [DDPG] to simulataneuous train 33 Reacher agents in a Unity environment. We made use of the implementation of DDPG provided in the Deep Reinforcement Learning course repository [DRLGIT], and, following the guidelines in the benchmark solution,  modifieid the code to work for multiple agents.
+In this project we use a modification of the Deep Deterministic Policy Gradient algortihm (DDPG) from [DDPG] to simulataneuous train 20 Reacher agents in a Unity environment. We made use of the implementation of DDPG provided in the Deep Reinforcement Learning course repository [DRLGIT], and, following the guidelines in the benchmark solution,  modifieid the code to work for multiple agents.
 
 ## Implementation Details
 
