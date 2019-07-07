@@ -7,11 +7,6 @@ The work desribed in this report was completed as part of the submission for the
 
 In this project we use a modification of the Deep Deterministic Policy Gradient algortihm (DDPG) from [CITE] to simulataneuous train 33 Reacher agents in a Unity environment. We made use of the implementation of DDPG provided in the Deep Reinforcement Learning course repository, and, following the guidelines in the benchmark solution,  modifieid the code to work for multiple agents.
 
-
-(Something about actor critic methods)
-
-
-
 ## Implementation Details
 
 ### Modifications to use with multiple agents
@@ -120,3 +115,13 @@ Format: ![online_training](url)
 The unity environment includes tools for visualtion. Below is a short clip of the trained agent(after 400 episodes) in the envrionment. The full epidode has been posted on [YouTube](https://www.youtube.com/watch?v=OseH3sEPzuI)
 
 ![](Trained.gif)
+
+
+## Ideas for Future Work
+The current implementation could be improved by considering the following
+* Systematic hyper parameter optimisation
+* Using batch normalisation
+* Reducing the weight applied to noise in the actions as training progressed.
+* Introducing clipping to the actions.
+
+It would also be interesting to implement the distributed version of the algortihm described in [CITE]
