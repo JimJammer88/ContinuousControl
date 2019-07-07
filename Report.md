@@ -125,3 +125,9 @@ The current implementation could be improved by considering the following
 * Introducing clipping to the actions.
 
 It would also be interesting to implement the distributed version of the algortihm described in [CITE]
+
+## References
+
+[DDPG]  
+[DRLGIT]
+[D4PG]
